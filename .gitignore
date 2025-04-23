@@ -1,8 +1,0 @@
-__pycachge__/
-*.pyc
-.env
-*.csv
-*.xlsx
-*.docx
-.idea/
-.vscode/
