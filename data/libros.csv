@@ -3,3 +3,4 @@ id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
 2,El contrato,2,2015,Misterio,Booknet,True
 3,Marfil,3,2019,Drama,Wattpad,False
 4,Heist,4,2021,Suspenso,Booknet,False
+5,A través de mi ventana,5,2020,Romance,Wattpad,True
