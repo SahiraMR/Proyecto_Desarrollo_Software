@@ -3,3 +3,4 @@ class Libro(BaseModel):
    id: int = None
    titulo: str
    autor_id: int
+   anio_publicacion: int
