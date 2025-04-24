@@ -41,3 +41,4 @@ def agregar_comentario(comentario: comentarios_crud.Comentario):
 @app.get("/comentarios")
 def listar_comentarios():
     return comentarios_crud.listar_comentarios()
+
