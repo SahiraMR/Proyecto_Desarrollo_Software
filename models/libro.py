@@ -6,3 +6,4 @@ class Libro(BaseModel):
    anio_publicacion: int
    genero: str
    plataforma: str
+   viral_en_tiktok: bool
