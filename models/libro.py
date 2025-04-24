@@ -4,3 +4,4 @@ class Libro(BaseModel):
    titulo: str
    autor_id: int
    anio_publicacion: int
+   genero: str
