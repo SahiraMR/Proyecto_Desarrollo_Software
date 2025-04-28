@@ -29,3 +29,13 @@ def crear_libro(libro: Libro):
     libros.append(libro.dict())
     escribir_csv(libros)
     return libro
+
+def actualizar_libro(id: int, libro: Libro):
+    libros = leer_csv()
+    for i, l in enumerate(libros):
+        if int(l["id"]) == id:
+            libros[i] = libro.dict()
+            libros[i]["id"] = str(id)
+            escribir_csv(libros)
+            return libro
+    raise HTTPException(status_code=404, detail="Libro no encontrado")
