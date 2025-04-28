@@ -52,3 +52,11 @@ def eliminar_libro(id: int):
 
     if not libro_encontrado:
         raise HTTPException(status_code=404, detail="Libro no encontrado")
+    
+    escribir_csv(nuevos_libros)
+    with open(ELIMINADOS_PATH, 'a', newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=libro_encontrado.keys())
+        if os.stat(ELIMINADOS_PATH).st_size == 0:
+            writer.writeheader()
+        writer.writerow(libro_encontrado)
+    return {"mensaje": "Libro eliminado y registrado en historial."}
