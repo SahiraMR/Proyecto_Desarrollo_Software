@@ -60,3 +60,6 @@ def eliminar_libro(id: int):
             writer.writeheader()
         writer.writerow(libro_encontrado)
     return {"mensaje": "Libro eliminado y registrado en historial."}
+
+def filtrar_por_genero(genero: str):
+    return [l for l in leer_csv() if l["genero"].lower() == genero.lower()]
