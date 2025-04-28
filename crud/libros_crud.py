@@ -63,3 +63,6 @@ def eliminar_libro(id: int):
 
 def filtrar_por_genero(genero: str):
     return [l for l in leer_csv() if l["genero"].lower() == genero.lower()]
+
+def buscar_por_nombre(nombre: str):
+    return [l for l in leer_csv() if nombre.lower() in l["titulo"].lower()]
