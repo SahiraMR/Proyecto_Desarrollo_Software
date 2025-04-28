@@ -19,3 +19,6 @@ def escribir_csv(libros: List[dict]):
         writer = csv.DictWriter(f, fieldnames=["id", "titulo", "autor_id", "anio_publicacion", "genero", "plataforma", "viral_en_tiktok"])
         writer.writeheader()
         writer.writerows(libros)
+
+def listar_libros():
+    return leer_csv()
