@@ -22,3 +22,10 @@ def escribir_csv(libros: List[dict]):
 
 def listar_libros():
     return leer_csv()
+
+def crear_libro(libro: Libro):
+    libros = leer_csv()
+    libro.id = max([int(l["id"]) for l in libros], default=0) + 1
+    libros.append(libro.dict())
+    escribir_csv(libros)
+    return libro
