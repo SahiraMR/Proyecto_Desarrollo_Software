@@ -13,3 +13,9 @@ def leer_csv() -> List[dict]:
         return []
     with open(DATA_PATH, newline='', encoding="utf-8") as f:
         return list(csv.DictReader(f))
+    
+def escribir_csv(libros: List[dict]):
+    with open(DATA_PATH, 'w', newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["id", "titulo", "autor_id", "anio_publicacion", "genero", "plataforma", "viral_en_tiktok"])
+        writer.writeheader()
+        writer.writerows(libros)
