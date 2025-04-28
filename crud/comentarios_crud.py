@@ -23,3 +23,6 @@ def escribir_csv(comentarios: List[dict]):
         writer = csv.DictWriter(f, fieldnames=["id", "nombre", "calificacion"])
         writer.writeheader()
         writer.writerows(comentarios)
+
+def listar_comentarios():
+    return leer_csv()
