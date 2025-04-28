@@ -47,3 +47,24 @@ def actualizar_comentario(id: int, comentario: Comentario):
             escribir_csv(comentarios)
             return comentario
     raise HTTPException(status_code=404, detail="Comentario no encontrado")
+
+def eliminar_comentario(id: int):
+    comentarios = leer_csv()
+    comentario_encontrado = None
+    nuevos_comentarios = []
+    for c in comentarios:
+        if int(c["id"]) == id:
+            comentario_encontrado = c
+        else:
+            nuevos_comentarios.append(c)
+
+    if not comentario_encontrado:
+        raise HTTPException(status_code=404, detail="Comentario no encontrado")
+
+    escribir_csv(nuevos_comentarios)
+    with open(ELIMINADOS_PATH, 'a', newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=comentario_encontrado.keys())
+        if os.stat(ELIMINADOS_PATH).st_size == 0:
+            writer.writeheader()
+        writer.writerow(comentario_encontrado)
+    return {"mensaje": "Comentario eliminado y registrado en historial."}
