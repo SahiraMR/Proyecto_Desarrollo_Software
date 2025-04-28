@@ -1,8 +1,13 @@
 id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
-2,El contrato,2,2015,Misterio,Booknet,True
-3,Marfil,3,2019,Drama,Wattpad,False
-4,Heist,4,2021,Suspenso,Booknet,False
-5,A través de mi ventana,5,2020,Romance,Wattpad,True
-6,La chica del sombrero rojo,6,2022,Misterio,Booknet,False
-7,Boulevard,5,2014,Romance,Wattpad,True
-8,h,0,0,string,string,True
+1,Antes de diciembre,1,2020,Romance Juvenil,Wattpad,True
+2,Perfectos mentirosos,2,2019,Misterio/Romance,Wattpad,True
+3,A través de mi ventana,3,2019,Romance,Wattpad,True
+4,El chico de arriba,4,2021,Romance,Booknet,False
+5,string,0,0,string,string,True
+7,Lujuria,7,2020,Romance Erótico,Booknet,False
+8,Una perfecta equivocación,8,2021,Romance,Booknet,False
+9,No te enamores de Nika,9,2020,Drama/Romance,Wattpad,True
+10,Tres meses,10,2021,Drama/Romance,Wattpad,True
+11,Mi amor de Wattpad,11,2020,Romance Juvenil,Wattpad,True
+12,Mi estúpido niñero,12,2021,Comedia Romántica,Wattpad,True
+13,Fleur. Mi desesperada decisión,13,2022,Drama/Romance,Wattpad,True

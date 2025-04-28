@@ -1,7 +1,1 @@
-id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
-
-
-
-
-
-1,string,0,0,stringgg,string,True
+id,titulo,autor_id,plataforma,viral_tiktok6,Las luces de febrero,6,2021,Romance,Booknet,False
