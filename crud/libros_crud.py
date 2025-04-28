@@ -39,3 +39,16 @@ def actualizar_libro(id: int, libro: Libro):
             escribir_csv(libros)
             return libro
     raise HTTPException(status_code=404, detail="Libro no encontrado")
+
+def eliminar_libro(id: int):
+    libros = leer_csv()
+    libro_encontrado = None
+    nuevos_libros = []
+    for l in libros:
+        if int(l["id"]) == id:
+            libro_encontrado = l
+        else:
+            nuevos_libros.append(l)
+
+    if not libro_encontrado:
+        raise HTTPException(status_code=404, detail="Libro no encontrado")
