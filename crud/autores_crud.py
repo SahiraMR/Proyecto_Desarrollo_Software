@@ -33,3 +33,13 @@ def crear_autor(autor: Autor):
     autores.append(autor_dict)
     escribir_csv(autores)
     return autor
+
+def actualizar_autor(id: int, autor: Autor):
+    autores = leer_csv()
+    for i, a in enumerate(autores):
+        if int(a["id"]) == id:
+            autores[i] = autor.dict()
+            autores[i]["id"] = str(id)
+            escribir_csv(autores)
+            return autor
+    raise HTTPException(status_code=404, detail="Autor no encontrado")
