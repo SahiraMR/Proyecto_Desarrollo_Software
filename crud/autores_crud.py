@@ -43,3 +43,16 @@ def actualizar_autor(id: int, autor: Autor):
             escribir_csv(autores)
             return autor
     raise HTTPException(status_code=404, detail="Autor no encontrado")
+
+def eliminar_autor(id: int):
+    autores = leer_csv()
+    autor_encontrado = None
+    nuevos_autores = []
+    for a in autores:
+        if int(a["id"]) == id:
+            autor_encontrado = a
+        else:
+            nuevos_autores.append(a)
+
+    if not autor_encontrado:
+        raise HTTPException(status_code=404, detail="Autor no encontrado")
