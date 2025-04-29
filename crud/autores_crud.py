@@ -24,3 +24,12 @@ def escribir_csv(autores: List[dict]):
 
 def listar_autores():
     return leer_csv()
+
+def crear_autor(autor: Autor):
+    autores = leer_csv()
+    autor.id = max([int(a["id"]) for a in autores], default=0) + 1
+    autor_dict = autor.dict()
+    print(f"Autor creado: {autor_dict}")  # Para ver el contenido antes de agregarlo
+    autores.append(autor_dict)
+    escribir_csv(autores)
+    return autor
