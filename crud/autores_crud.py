@@ -14,3 +14,10 @@ def leer_csv() -> List[dict]:
         return []
     with open(DATA_PATH, newline='', encoding="utf-8") as f:
         return list(csv.DictReader(f))
+    
+
+def escribir_csv(autores: List[dict]):
+    with open(DATA_PATH, 'w', newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["id", "nombre", "nombre_libro", "genero"])
+        writer.writeheader()
+        writer.writerows(autores)
