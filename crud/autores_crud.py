@@ -56,3 +56,11 @@ def eliminar_autor(id: int):
 
     if not autor_encontrado:
         raise HTTPException(status_code=404, detail="Autor no encontrado")
+    
+    escribir_csv(nuevos_autores)
+    with open(ELIMINADOS_PATH, 'a', newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=autor_encontrado.keys())
+        if os.stat(ELIMINADOS_PATH).st_size == 0:
+            writer.writeheader()
+        writer.writerow(autor_encontrado)
+    return {"mensaje": "Autor eliminado y registrado en historial."}
