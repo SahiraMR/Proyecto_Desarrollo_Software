@@ -25,4 +25,5 @@ id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
 24,Leo ama a Aries,24,2020,Romance LGBT,Booknet,False
 25,Abzurdah,25,2021,Drama Juvenil,Wattpad,False
 26,Culpa mía,26,2019,Romance Juvenil,Booknet,True
+27,Culpa tuya,27,2020,Romance Juvenil,Booknet,True
 
