@@ -5,8 +5,7 @@ id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
 4,El chico de arriba,4,2021,Romance,Booknet,False
 5,Perfecto caos,5,2022,Romance Dramático,Booknet,False
 6,Las luces de febrero,6,2021,Romance,Booknet,False
-7,Lujuria,7,2020,Romance Erótico,Booknet,False
-8,Una perfecta equivocación,8,2021,Romance,Booknet,False
+8,quimica,24,2024,drama,booknet,True
 9,No te enamores de Nika,9,2020,Drama/Romance,Wattpad,True
 10,Tres meses,10,2021,Drama/Romance,Wattpad,True
 11,Mi amor de Wattpad,11,2020,Romance Juvenil,Wattpad,True
@@ -29,4 +28,4 @@ id,titulo,autor_id,anio_publicacion,genero,plataforma,viral_en_tiktok
 28,Vampyr,28,2021,Fantasia Oscura,Wattpad,False
 29,Historias de Wattpad,29,2023,Varios géneros,Wattpad,True
 30,My Wattpad Love,30,2019,Romance Juvenil,Wattpad,True
-
+32,moon,32,2023,Romance,Wattpad,False

@@ -5,7 +5,6 @@ from models.comentario import Comentario
 from typing import List
 from pathlib import Path
 
-# Rutas de archivos
 DATA_PATH = Path("data/comentarios.csv")
 ELIMINADOS_PATH = Path("data/comentarios_eliminados.csv")
 
@@ -17,36 +16,36 @@ def leer_csv() -> List[dict]:
         return list(csv.DictReader(f))
 
 
-
 def escribir_csv(comentarios: List[dict]):
     with open(DATA_PATH, 'w', newline='', encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["id", "nombre", "calificacion"])
+        writer = csv.DictWriter(f, fieldnames=["id", "usuario", "contenido", "fecha"])
         writer.writeheader()
         writer.writerows(comentarios)
+
 
 def listar_comentarios():
     return leer_csv()
 
-def agregar_comentario(comentario: Comentario):
+
+def crear_comentario(comentario: Comentario):
     comentarios = leer_csv()
-    if not (1 <= comentario.calificacion <= 5):
-        raise HTTPException(status_code=400, detail="La calificación debe estar entre 1 y 5.")
     comentario.id = max([int(c["id"]) for c in comentarios], default=0) + 1
-    comentarios.append(comentario.dict())
+    comentario_dict = comentario.dict()
+    comentarios.append(comentario_dict)
     escribir_csv(comentarios)
     return comentario
+
 
 def actualizar_comentario(id: int, comentario: Comentario):
     comentarios = leer_csv()
     for i, c in enumerate(comentarios):
         if int(c["id"]) == id:
-            if not (1 <= comentario.calificacion <= 5):
-                raise HTTPException(status_code=400, detail="La calificación debe estar entre 1 y 5.")
             comentarios[i] = comentario.dict()
             comentarios[i]["id"] = str(id)
             escribir_csv(comentarios)
             return comentario
     raise HTTPException(status_code=404, detail="Comentario no encontrado")
+
 
 def eliminar_comentario(id: int):
     comentarios = leer_csv()
