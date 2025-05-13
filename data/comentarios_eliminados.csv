@@ -1,2 +1,1 @@
-id,usuario,contenido,fecha
-1,Juan,Excelente libro,2025-05-01
+id,libro_id,usuario,contenido,fecha
