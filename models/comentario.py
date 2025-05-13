@@ -1,7 +1,10 @@
 from pydantic import BaseModel
+from typing import Optional
+from datetime import date
 
 class Comentario(BaseModel):
-    id: int = None  # se asigna automáticamente
+    id: Optional[int] = None
+    libro_id: int
     usuario: str
     contenido: str
-    fecha: str  # formato YYYY-MM-DD
+    fecha: date
